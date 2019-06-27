@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'have_i_been_pwned'
-  s.version = "0.0.1"
+  s.version = "0.1.0"
   s.date = '2019-06-27'
   s.summary = 'Check to see if your passwords are safe'
   s.description = 'A simple gem to check and see if a given password was compromised by a hack. Special thanks to Troy Hunt facilitating the service.'
