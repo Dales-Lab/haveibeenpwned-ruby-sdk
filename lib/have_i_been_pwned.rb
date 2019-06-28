@@ -29,8 +29,6 @@ module HaveIBeenPwned
         else
           raise 'Troy Hunt has failed us. The API returned something not 200.'
         end
-      else
-        raise 'You must provide a password to check!'
       end
     end
   end
