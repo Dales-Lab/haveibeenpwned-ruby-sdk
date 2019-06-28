@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "simplecov"
   s.add_development_dependency "codecov", ">= 0.1.10"
   s.add_development_dependency "rake"
-  s.add_development_dependency "minitest"
+  s.add_development_dependency "mocha"
 
   all_files = `git ls-files`.split("\n")
   test_files = `git ls-files -- {test,spec,features}/*`.split("\n")

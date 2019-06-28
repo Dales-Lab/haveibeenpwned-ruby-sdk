@@ -1,8 +1,6 @@
-require 'minitest/autorun'
 require 'helper'
-require 'have_i_been_pwned'
 
-class HolaTest < Minitest::Test
+class HolaTest < Test::Unit::TestCase #Minitest::Test
   def test_abc123_is_found
     assert_equal true, HaveIBeenPwned::pwned('abc123')
   end
