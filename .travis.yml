@@ -3,10 +3,6 @@ rvm:
 - 2.3.1
 script:
 - bundle exec rake
-branches:
-  only:
-  - master
-  - /v\d+.\d+.\d/
 deploy:
   provider: rubygems
   api_key:
