@@ -1,3 +1,12 @@
+# module HaveIBeenPwned
+#   VERSION = "0.1.2"
+# end
+
 module HaveIBeenPwned
-  VERSION = "0.1.2"
+  class << self
+    def version
+      "0.1.2"
+    end
+  end
 end
+
