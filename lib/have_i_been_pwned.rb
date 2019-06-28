@@ -12,7 +12,7 @@ module HaveIBeenPwned
         first_five = digest[0..4]
         # make the API call
         results = HTTParty.get("https://api.pwnedpasswords.com/range/#{first_five}")
-        
+
         # guard: if we dont get something back
         return unless results.code == 200
 

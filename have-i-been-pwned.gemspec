@@ -14,6 +14,8 @@ Gem::Specification.new do |s|
   s.email = 'dale@daleslab.com'
   s.homepage = "https://github.com/Dales-Lab/haveibeenpwned-ruby-sdk"
 
+  s.required_ruby_version = '>= 2.0.0'
+
   s.add_runtime_dependency "httparty"
 
   s.add_development_dependency "simplecov"
