@@ -4,7 +4,7 @@ require "version"
 
 Gem::Specification.new do |s|
   s.name = 'have-i-been-pwned'
-  s.version = HaveIBeenPwned::version # see: lib/version.rb
+  s.version = HaveIBeenPwned::VERSION # see: lib/version.rb
   s.platform = Gem::Platform::RUBY
   s.licenses = ['MIT']
   s.date = '2019-06-27'
