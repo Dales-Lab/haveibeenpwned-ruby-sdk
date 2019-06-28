@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'helper'
 require 'have_i_been_pwned'
 
 class HolaTest < Minitest::Test
