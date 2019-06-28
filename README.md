@@ -26,7 +26,7 @@ gem 'have-i-been-pwned'
 ```
 # some controller
 # check the password
-if HaveIBeenPwned::pwned params[:password]
+if !HaveIBeenPwned::pwned params[:password]
    puts "Yay! You can use this password!"
 else
    puts "No! Bad!!"
