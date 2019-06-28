@@ -1,7 +1,7 @@
 # haveibeenpwned-ruby-sdk
 Ruby wrapper for V2 haveibeenpwned.com API.
 
-[![Build Status](https://travis-ci.org/Dales-Lab/haveibeenpwned-ruby-sdk.svg?branch=master)](https://travis-ci.org/Dales-Lab/haveibeenpwned-ruby-sdk) [![codecov](https://codecov.io/gh/Dales-Lab/haveibeenpwned-ruby-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/Dales-Lab/haveibeenpwned-ruby-sdk) [![Gem](https://img.shields.io/gem/v/have-i-been-pwned.svg?style=flat)](http://rubygems.org/gems/GEMNAME "View this project on Rubygems")
+[![Build Status](https://travis-ci.org/Dales-Lab/haveibeenpwned-ruby-sdk.svg?branch=master)](https://travis-ci.org/Dales-Lab/haveibeenpwned-ruby-sdk) [![codecov](https://codecov.io/gh/Dales-Lab/haveibeenpwned-ruby-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/Dales-Lab/haveibeenpwned-ruby-sdk) [![Gem](https://img.shields.io/gem/v/have-i-been-pwned.svg?style=flat)](http://rubygems.org/gems/have-i-been-pwned "View this project on Rubygems")
 
 ## Installation
 ```
