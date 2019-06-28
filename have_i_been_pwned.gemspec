@@ -16,9 +16,8 @@ Gem::Specification.new do |s|
   s.files = [
     "Gemfile",
     "Rakefile",
-    "VERSION",
     "lib/have_i_been_pwned.rb",
-    "lib/have_i_been_pwned/version.rb",
+    "lib/version.rb",
     "test/test_have_i_been_pwned.rb"
   ]
   s.require_paths = ["lib", "test"]
