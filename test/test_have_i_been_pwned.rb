@@ -1,6 +1,6 @@
 require 'helper'
 
-class HolaTest < Test::Unit::TestCase #Minitest::Test
+class PwnedTest < Test::Unit::TestCase #Minitest::Test
   def test_abc123_is_found
     assert_equal true, HaveIBeenPwned::pwned('abc123')
   end
@@ -15,5 +15,11 @@ class HolaTest < Test::Unit::TestCase #Minitest::Test
 
   def test_not_actually_providing_a_password_is_silly
     assert_equal false, HaveIBeenPwned::pwned('')
+  end
+
+  def test_no_password_at_all_raises
+    assert_raise("RuntimeError") {
+      HaveIBeenPwned::pwned
+    }
   end
 end
