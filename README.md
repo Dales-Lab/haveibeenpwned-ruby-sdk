@@ -37,8 +37,8 @@ end
 - Open an issue about your change
 - Fork it, DL it
 - Run `bundle`
-- Run `rake test`
+- Run `bundle exec rake`
 - Make your additions, changes, fixes, etc. (Do not make changes to version, Rakefile or spec
 - Add tests for the above (no pr acceptance without them)
-- Run `rake test`
+- Run `bundle exec rake`
 - Make your PR. :smile:
