@@ -7,7 +7,7 @@ deploy:
   provider: rubygems
   api_key:
     secure: s7JXwHn+i4yWBshlBfkAa6H0ePUsXOZa40r0yiFvziGqh5RGtqT4MlGcYp/en8vSlBq1cHqxk1rkqBhN6uUlaKRTfLTRmOqBX/bLVzTwO8uRO6MgU3JkGxkL1YAFmQs6w/q5ZnYVhI35LN0dEi0vk2eDJayFvo1zw4nBJYWqAKqAw0uzoiCarEjqfknh8ZmMDr0KstJ1pDBVTsrUiQ/K0mfBCRK2Ho5qxk4uDed0UKSvmghhIg644K5SEHSA9tj1gelQTKxROCQB4kOXKl2y9+klUfDXAd27pzCYzt3Jt8ggZxDCZmFIun0YZzFoiEkDeHW0l9sxhntKncxQxyR0m2s6H8jE3fJBFJhg3/NAa9NBmED0evCrn2u1gqWM6rsDqlvLV3mA2Kh1irZsrGx78c1A54QAgPVZbN5CCKDymZibtkrGANyLPHOF/1oLl08Y3Y80UW+859yiR0qeixe6cJ6GsEg0e0Nhe6qeUcMGAstItzY6SzHCQCjL+bknnYILvupnvZQHyFUmY5lWYJDCD8k4+hg00LyAILrk6uIAx/TdH270s6Ep0liXtE6uCoGtcqjrCl9ENOsK9W5xSSe6c8CjBUhhnwO5fYdMtNYR7G44QwGb5FvisD+6jR8xxjUYdQsVOfjTq01jFz+Lgr/XZIn3mLbd8HSzq6jLiUt2zmY=
-  gem: have_i_been_pwned
+  gem: have-i-been-pwned
   on:
     tags: true
     repo: Dales-Lab/haveibeenpwned-ruby-sdk

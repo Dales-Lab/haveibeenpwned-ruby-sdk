@@ -10,10 +10,10 @@ module HaveIBeenPwned
         digest = Digest::SHA1.hexdigest password
         # get the first 5 characters of the hash
         firstFive = digest[0..4]
-        # make the APU call
+        # make the API call
         results = HTTParty.get("https://api.pwnedpasswords.com/range/#{firstFive}")
         # if we get something back
-        if results.code != 404
+        if results.code == 200
           # split the string based on line breaks into an array
           resArray = results.split("\n")
           # interate through the list of hashes
@@ -27,7 +27,7 @@ module HaveIBeenPwned
           # return false if we dont find anything
           return false
         else
-          raise 'Troy Hunt has failed us. The API returned a 404.'
+          raise 'Troy Hunt has failed us. The API returned something not 200.'
         end
       else
         raise 'You must provide a password to check!'
