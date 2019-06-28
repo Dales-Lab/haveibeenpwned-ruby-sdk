@@ -3,7 +3,7 @@ $LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require "version"
 
 Gem::Specification.new do |s|
-  s.name = 'have_i_been_pwned'
+  s.name = 'have-i-been-pwned'
   s.version = HaveIBeenPwned::VERSION # see: lib/version.rb
   s.platform = Gem::Platform::RUBY
   s.licenses = ['MIT']
