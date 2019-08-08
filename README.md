@@ -14,7 +14,14 @@ gem install have-i-been-pwned
 require 'have-i-been-pwned'
 ...
 # returns true if the password is found, false otherwise
-result = HaveIBeenPwned::pwned 'abc123'
+result = HaveIBeenPwned.pwned 'abc123'
+```
+
+```
+require 'have-i-been-pwned'
+...
+# returns a symboled list of breachers (ie. { :name => 'Adobe' }) for that account, nil if none are found
+result = HaveIBeenPwned.pwned_account 'some-email@gmail.com'
 ```
 
 #### Rails
@@ -26,7 +33,7 @@ gem 'have-i-been-pwned'
 ```
 # some controller
 # check the password
-if !HaveIBeenPwned::pwned params[:password]
+if !HaveIBeenPwned.pwned params[:password]
    puts "Yay! You can use this password!"
 else
    puts "No! Bad!!"

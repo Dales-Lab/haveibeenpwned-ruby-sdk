@@ -5,7 +5,7 @@ module HaveIBeenPwned
   class << self
     # Check to see if a given password has been pwned/compromised by a breach.
     # @param [String] password The *password* you want to check.
-    # @return [Boolean] True if the password has been compromised
+    # @return [Boolean] True if the password has been compromised, false otherwise
     def pwned password
       # if password is not nil
       if password
