@@ -20,7 +20,7 @@ result = HaveIBeenPwned.pwned 'abc123'
 ```
 require 'have-i-been-pwned'
 ...
-# returns a symboled list of breachers (ie. { :name => 'Adobe' }) for that account, nil if none are found
+# returns an array with symbolized hashs of breachers (ie. [ { :name => 'Adobe' } ]) for that account, nil if none are found
 result = HaveIBeenPwned.pwned_account 'some-email@gmail.com'
 ```
 
