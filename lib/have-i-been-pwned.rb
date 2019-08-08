@@ -45,8 +45,8 @@ module HaveIBeenPwned
       api_key ||= ENV['HIBP_API_KEY'] # for testing
       throw 'You must provide a paid API key from haveibeenpwned.com to use this feature.' if api_key.nil?
       headers = {
-        'user-agent': user_agent,
-        'Hibp-Api-Key': api_key
+        'user-agent' => user_agent,
+        'Hibp-Api-Key' => api_key
       }
       results = HTTParty.get("https://haveibeenpwned.com/api/v3/breachedaccount/#{email}", headers: headers)
       return if results.nil?
