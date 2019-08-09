@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0.0'
 
-  s.add_runtime_dependency "httparty"
+  s.add_runtime_dependency "httparty", ">= 0.17.0"
 
   s.add_development_dependency "simplecov"
   s.add_development_dependency "codecov", ">= 0.1.10"
