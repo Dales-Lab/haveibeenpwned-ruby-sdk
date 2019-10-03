@@ -2,11 +2,14 @@ require 'httparty'
 require 'digest'
 
 module HaveIBeenPwned
+
+  DEFAULT_TIMEOUT = 10
+
   class << self
     # Check to see if a given password has been pwned/compromised by a breach.
     # @param [String] password The *password* you want to check.
     # @return [Boolean] True if the password has been compromised, false otherwise
-    def pwned password
+    def pwned password, timeout: DEFAULT_TIMEOUT
       # if password is not nil
       if password
         # get a digest of the password
@@ -16,7 +19,7 @@ module HaveIBeenPwned
         # get the first 5 characters of the hash
         first_five = digest[0..4]
         # make the API call
-        results = HTTParty.get("https://api.pwnedpasswords.com/range/#{first_five}")
+        results = HTTParty.get("https://api.pwnedpasswords.com/range/#{first_five}", timeout: timeout)
 
         # guard: if we dont get something back
         return false unless results.code == 200
@@ -41,14 +44,14 @@ module HaveIBeenPwned
     # @param [String] api_key The v3 API required a paid key from haveibeenpwned.com. Can also be specified as a ENV VAR 'HIBP_API_KEY' {More Information}[https://www.troyhunt.com/authentication-and-the-have-i-been-pwned-api/]
     # @param [String] user_agent Provide a custom user agent. (default: haveibeenpwned-ruby-sdk)
     # @return [[Hash], nil] Returns a array of hashes containing the [:name] of places the email was compromised by.
-    def pwned_account email, api_key = nil, user_agent = 'haveibeenpwned-ruby-sdk'
+    def pwned_account email, api_key = nil, user_agent = 'haveibeenpwned-ruby-sdk', timeout: DEFAULT_TIMEOUT
       api_key ||= ENV['HIBP_API_KEY'] # for testing
       throw 'You must provide a paid API key from haveibeenpwned.com to use this feature.' if api_key.nil?
       headers = {
         'user-agent' => user_agent,
         'Hibp-Api-Key' => api_key
       }
-      results = HTTParty.get("https://haveibeenpwned.com/api/v3/breachedaccount/#{email}", headers: headers)
+      results = HTTParty.get("https://haveibeenpwned.com/api/v3/breachedaccount/#{email}", headers: headers, timeout: timeout)
       return if results.nil?
       error_check = Hash[results.map { |(k, v)| [k.downcase.to_sym, v] }] rescue nil
 
