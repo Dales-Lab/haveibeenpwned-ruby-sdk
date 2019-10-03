@@ -6,6 +6,15 @@ class PwnedTest < Test::Unit::TestCase
     assert_not_nil HaveIBeenPwned.pwned_account('john@gmail.com') # just a very generic email that does fail
   end
 
+  def test_account_timeout
+    starting = Time.now
+    result = HaveIBeenPwned.pwned_account('major.monkey.ha.not.been.hacked@gmail.com', timeout: 1)
+    ending = Time.now
+    elapsed = (ending - starting).floor
+
+    assert_operator elapsed, :<=, 1
+  end
+
   def test_my_email_is_not_found
     assert_nil HaveIBeenPwned.pwned_account('major.monkey.ha.not.been.hacked@gmail.com')
   end

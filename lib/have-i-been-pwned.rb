@@ -3,11 +3,12 @@ require 'digest'
 
 module HaveIBeenPwned
 
-  DEFAULT_TIMEOUT = 10
+  DEFAULT_TIMEOUT = 30
 
   class << self
     # Check to see if a given password has been pwned/compromised by a breach.
     # @param [String] password The *password* you want to check.
+    # @param [Number] timeout Seconds until request timeout.
     # @return [Boolean] True if the password has been compromised, false otherwise
     def pwned password, timeout: DEFAULT_TIMEOUT
       # if password is not nil
@@ -43,6 +44,7 @@ module HaveIBeenPwned
     # @param [String] email The email address you want to check
     # @param [String] api_key The v3 API required a paid key from haveibeenpwned.com. Can also be specified as a ENV VAR 'HIBP_API_KEY' {More Information}[https://www.troyhunt.com/authentication-and-the-have-i-been-pwned-api/]
     # @param [String] user_agent Provide a custom user agent. (default: haveibeenpwned-ruby-sdk)
+    # @param [Number] timeout Seconds until request timeout.
     # @return [[Hash], nil] Returns a array of hashes containing the [:name] of places the email was compromised by.
     def pwned_account email, api_key = nil, user_agent = 'haveibeenpwned-ruby-sdk', timeout: DEFAULT_TIMEOUT
       api_key ||= ENV['HIBP_API_KEY'] # for testing

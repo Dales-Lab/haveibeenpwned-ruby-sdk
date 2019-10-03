@@ -2,24 +2,33 @@ require 'helper'
 
 class PwnedTest < Test::Unit::TestCase #Minitest::Test
   def test_abc123_is_found
-    assert_equal true, HaveIBeenPwned::pwned('abc123')
+    assert_equal true, HaveIBeenPwned.pwned('abc123')
+  end
+
+  def test_password_timeout
+    starting = Time.now
+    result = HaveIBeenPwned.pwned('abc123', timeout: 1)
+    ending = Time.now
+    elapsed = (ending - starting).floor
+
+    assert_operator elapsed, :<=, 1
   end
 
   def test_password_is_found
-    assert_equal true, HaveIBeenPwned::pwned('password')
+    assert_equal true, HaveIBeenPwned.pwned('password')
   end
 
   def test_crazy_long_password_is_not_found
-    assert_equal false, HaveIBeenPwned::pwned('dfsfk;lngfdsjlmkvsdlmjkvf8um54b89u5438mu0p435u0m5b409u54b09um5309um50u9m3b56u90m54jmgtrgv')
+    assert_equal false, HaveIBeenPwned.pwned('dfsfk;lngfdsjlmkvsdlmjkvf8um54b89u5438mu0p435u0m5b409u54b09um5309um50u9m3b56u90m54jmgtrgv')
   end
 
   def test_not_actually_providing_a_password_is_silly
-    assert_equal false, HaveIBeenPwned::pwned('')
+    assert_equal false, HaveIBeenPwned.pwned('')
   end
 
   def test_no_password_at_all_raises
     assert_raise("RuntimeError") {
-      HaveIBeenPwned::pwned
+      HaveIBeenPwned.pwned
     }
   end
 end

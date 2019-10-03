@@ -40,6 +40,13 @@ else
 end
 ```
 
+#### Timeout
+
+With both the pwned and pwned_account methods you can also introduce a custom timeout. By default the timeout is 30 seconds. You can customize is to your needs like so:
+```
+HaveIBeenPwned.pwned 'abc123', timeout: 10
+```
+
 ## Contributing
 - Open an issue about your change
 - Fork it, DL it
